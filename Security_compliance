@@ -1,0 +1,55 @@
+Here’s a structured overview of **Security & Compliance** in the context of scanning, secrets management, and auditing:
+
+---
+
+## 🔒 What is Security & Compliance in DevOps?
+Security & Compliance ensures that applications and infrastructure are **protected, compliant with standards, and auditable**. It integrates security practices into the development and operations lifecycle (often called **DevSecOps**) to prevent vulnerabilities, safeguard sensitive data, and meet regulatory requirements.
+
+---
+
+## ⚙️ Key Capabilities
+- **Scanning**  
+  - Vulnerability scanning of code, dependencies, containers, and infrastructure.  
+  - Static Application Security Testing (SAST) and Dynamic Application Security Testing (DAST).  
+  - Container image scanning for CVEs (Common Vulnerabilities and Exposures).  
+
+- **Secrets Management**  
+  - Secure storage and retrieval of API keys, passwords, and certificates.  
+  - Rotation and expiration policies for secrets.  
+  - Access control and audit trails for secret usage.  
+
+- **Auditing & Compliance**  
+  - Track changes to infrastructure and applications.  
+  - Generate compliance reports (e.g., PCI-DSS, HIPAA, GDPR).  
+  - Ensure adherence to security baselines and policies.  
+
+---
+
+## 🛠️ Common Tools
+| Category | Tools | Example Use |
+|----------|-------|-------------|
+| **Scanning** | OWASP ZAP, SonarQube, Trivy, Clair, Snyk | Detect vulnerabilities in code and containers |
+| **Secrets Management** | HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager | Store and rotate secrets securely |
+| **Auditing & Compliance** | Open Policy Agent (OPA), AWS Config, Azure Policy, GCP Cloud Audit Logs | Enforce policies and track compliance |
+
+---
+
+## 🚀 Benefits
+- **Risk Reduction**: Identify and fix vulnerabilities early.  
+- **Data Protection**: Prevent leaks of sensitive credentials.  
+- **Regulatory Compliance**: Meet industry standards and legal requirements.  
+- **Transparency**: Clear audit trails for accountability.  
+- **Automation**: Continuous security checks integrated into CI/CD pipelines.  
+
+---
+
+## 🔑 Real-World Example
+For a **cloud-native application**:
+- CI/CD pipeline runs **Trivy** to scan Docker images.  
+- Secrets are stored in **HashiCorp Vault** and injected at runtime.  
+- **AWS Config** continuously audits infrastructure against compliance rules.  
+- Reports are generated automatically for auditors.  
+
+---
+
+👉 Would you like me to expand this into a **DevSecOps workflow diagram** showing how scanning, secrets management, and auditing fit together in a CI/CD pipeline? That would make the flow more visual and easier to grasp.
