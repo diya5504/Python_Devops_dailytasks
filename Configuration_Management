@@ -1,0 +1,84 @@
+Configuration Management
+
+Used to handle dynamic configuration or templates.
+Here’s a structured overview of **Configuration Management** in DevOps, specifically focusing on handling **dynamic configuration and templates**:
+
+---
+
+## ⚙️ What is Configuration Management?
+Configuration Management (CM) is the practice of **defining, maintaining, and automating system and application settings** across environments. It ensures that infrastructure and applications are consistently configured, even as they scale or change dynamically.
+
+---
+
+## 🔑 Key Capabilities
+- **Dynamic Configuration**  
+  - Manage environment-specific variables (dev, test, prod).  
+  - Inject secrets, credentials, or runtime values securely.  
+  - Support rolling updates without downtime.  
+
+- **Templates & Reusability**  
+  - Use templating engines (e.g., Jinja2, Helm charts) to generate configs dynamically.  
+  - Parameterize configurations for different environments.  
+  - Avoid duplication by reusing templates across services.  
+
+- **Version Control**  
+  - Store configurations in Git for traceability.  
+  - Roll back to previous versions when needed.  
+
+- **Automation**  
+  - Apply configurations automatically using tools like Ansible, Puppet, or Chef.  
+  - Integrate with CI/CD pipelines for continuous delivery.  
+
+---
+
+## 🛠️ Common Tools
+| Tool | Purpose | Example Use |
+|------|---------|-------------|
+| **Ansible** | YAML playbooks + Jinja2 templates | Automate server/app configuration |
+| **Puppet** | Declarative manifests | Enforce system state across nodes |
+| **Chef** | Ruby DSL recipes | Configure applications dynamically |
+| **SaltStack** | Event-driven automation | Real-time config updates |
+| **Helm (Kubernetes)** | Chart templates | Manage dynamic app configs in clusters |
+| **Consul / etcd** | Service discovery + config store | Centralized dynamic configuration |
+
+---
+
+## 📜 Example: Ansible with Jinja2 Template
+```yaml
+# playbook.yml
+- hosts: webservers
+  tasks:
+    - name: Deploy config file
+      template:
+        src: config.j2
+        dest: /etc/myapp/config.yaml
+```
+
+```jinja2
+# config.j2
+database_url: {{ db_url }}
+api_key: {{ api_key }}
+environment: {{ env }}
+```
+👉 Variables (`db_url`, `api_key`, `env`) can be injected dynamically per environment.
+
+---
+
+## 🚀 Benefits
+- **Consistency**: Same configuration across environments.  
+- **Flexibility**: Easily adapt to dynamic workloads.  
+- **Scalability**: Handle thousands of servers or containers.  
+- **Security**: Centralized secrets management.  
+- **Auditability**: Track changes via version control.  
+
+---
+
+## 🔑 Real-World Example
+For a **microservices deployment on Kubernetes**:
+- Helm charts manage dynamic configs for each service.  
+- Secrets are injected from Vault or Kubernetes Secrets.  
+- Config updates roll out automatically without downtime.  
+
+---
+
+👉 Would you like me to create a **comparison table of Ansible vs Puppet vs Chef vs Helm** so you can see which configuration management tool fits best for different scenarios?
